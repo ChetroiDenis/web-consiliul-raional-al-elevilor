@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Principală - Consiliul raional al elevilor Cahul</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js"></script>
     <link rel="icon" href="images/logo.png">
 </head>
 
@@ -29,12 +28,13 @@
 
         </div>
     </header>
-    <script>
-        window.addEventListener("load", function () {
-            const navbar = document.querySelector(".navbar");
-            navbar.style.marginTop = "-60px"; // End position
-        });
-    </script>
+
+    <div class="video-loop">
+        <video id="background-video" autoplay muted loop src="resources/loopvideo.mp4"></video>
+    </div>
+    
+
+   
 
     <div class="title">
         <h1>Consiliul raional al elevilor Cahul</h1>
@@ -74,7 +74,7 @@
 
         <div class="photo-container">
 
-            <img src="images/image1.png" alt="">
+            <img src="images/image3.jpg" alt="">
             <img src="images/image2.jpg" alt="">
 
 
@@ -83,11 +83,26 @@
 
     </div>
 
+    <div class="centered">
+        <div class="invite-container">
 
+            <div class="invite-photo">
+                <img src="images/image2.jpg" alt="">
+            </div>
+            <div class="invite-text">
+                <h3>Ce avantaje oferim ? La ce este de folos acest website ?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda iure aperiam pariatur magni
+                    officia
+                    possimus, quaerat soluta, dolores provident expedita est nulla eum doloribus enim repellendus! Unde
+                    facere fuga illum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam molestiae
+                    cupiditate, modi voluptates quidem blanditiis fugit, quo reprehenderit commodi, dolor ducimus veniam
+                    doloremque sint amet? Nobis veritatis minus delectus suscipit.</p>
+            </div>
 
-    <div class="video-loop">
-        <video id="background-video" autoplay muted loop src="resources/loopvideo.mp4"></video>
+        </div>
     </div>
+
+    
 
     <footer>
 
@@ -117,24 +132,20 @@
             </div>
 
             <div class="col3">
+                <h2>Contactează-ne:</h2>
 
+                <form class="contact-footer" action="https://formspree.io/f/mzzdkkrq" method="POST">
+                    <label>
 
+                        <input for="nume" type="email" name="email" placeholder="Introdu aici e-mail-ul tău">
+                    </label>
+                    <label>
 
-                <form
-  action="https://formspree.io/f/mzzdkkrq"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+                        <textarea placeholder="Introdu mesajul tău" name="message"></textarea>
+                    </label>
+                    <!-- your other form fields go here -->
+                    <button type="submit">Trimite</button>
+                </form>
 
 
             </div>
@@ -148,3 +159,4 @@
 </body>
 
 </html>
+<script src="js/script.js"></script>

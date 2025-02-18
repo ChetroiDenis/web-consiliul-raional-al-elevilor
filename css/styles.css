@@ -1,6 +1,11 @@
-body {
-    margin: 0 0 0 0 ;
-}
+
+  body {
+    margin: 0;
+    background: linear-gradient( #ffffff, #e7e7e7, #ecf5ff);
+    overflow-x: hidden;
+  }
+
+
 
 header {
     display: flex;
@@ -31,15 +36,26 @@ header {
     padding-top: 50px;
     align-items: center;
     gap: 30px;
- 
+
 
 }
 
 .logo img {
     width: 45px;
     height: 45px;
+    animation: rotateFast 1s ease-in-out,  0.5s forwards;
+}
+
+@keyframes rotateFast {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 
 }
+
 
 .links {
     display: flex;
@@ -50,9 +66,29 @@ header {
 .links a {
     color: #007aff;
     text-decoration: none;
-  font-weight: bold;
-    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative; 
 }
+
+.links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 50%;
+    width: 0;
+    height: 3px;
+    border-radius: 25px;
+    background-color: #007aff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.links a:hover::after {
+    width: 100%; 
+    left: 0; 
+}
+
+
 
 /*titlu pagina principala*/
 .title {
@@ -60,22 +96,28 @@ header {
     justify-content: center;
 
 }
+
 .title h1 {
     color: #007aff;
 
-    padding-top: 100px;
+    padding-top: 10px;
     font-size: 40px;
 }
 
 
 /*container continut pentru pagina principala*/
 
+.centered {
+    display: flex;
+    justify-content: center;
+}
 .container-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 350px;
-    padding-top: 75px;
+    gap: 250px;
+    padding-top: 25px;
+    padding-bottom: 100px;
 }
 
 .text-c {
@@ -89,13 +131,28 @@ header {
     box-shadow: 0 0 20px 5px rgba(204, 204, 204, 0.6);
     width: 500px;
     height: auto;
+    background-color: white;
+    opacity: 0; /* Incepe cu opacity 0 */
+    animation: slideIn 0.7s forwards; /* Animația pentru text */
+}
 
+.container:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.container:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.container:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
 .container h2 {
     color: #007aff;
     margin-left: 20px;
 }
+
 .container p {
     margin-left: 20px;
 }
@@ -110,26 +167,133 @@ header {
     width: 500px;
     height: 300px;
     object-fit: cover;
-
+    border-radius: 10px;
+    opacity: 0; /* Incepe cu opacity 0 */
+    transform: translateX(100%); /* Pornim din dreapta */
+    animation: slideInImages 0.7s forwards;
 }
+
+.photo-container img:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.photo-container img:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+/* Animația pentru text */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animația pentru imagini */
+@keyframes slideInImages {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 /*video pagina principala*/
 .video-loop {
-    padding-top: 100px;
+    padding-top: 0px;
+    overflow: hidden; /* Ascunde partea video care iese din afacere la început */
 }
 
 .video-loop video {
     width: 100%;
-    height: 400px;
+    height: 200px;
     object-fit: cover;
-    padding-bottom: 200px;
+    padding-bottom: 0px;
+    opacity: 0; /* Începe cu opacitate 0 */
+    transform: translateX(-100%); /* Începe din stânga */
+    animation: slideIn 1s ease-out forwards; /* Aplica animația */
+}
+
+/* Animația pentru video */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Începe din stânga */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Video-ul ajunge la poziția finală */
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%); /* Start off-screen, la dreapta */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Mergi la poziția normală */
+        opacity: 1;
+    }
+}
+
+.invite-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 200px;
+    box-shadow: 0 0 20px 5px rgba(208, 208, 208, 0.6);
+    width: 1250px;
+    border-radius: 10px;
+    height: 350px;
+    align-items: center;
+    background-color: white;
+    opacity: 0; /* Ascunde elementul la început */
+    transform: translateX(100%); /* Poziționează-l în afacerea ecranului */
+    transition: opacity 1s, transform 1s; /* Animație lină */
+}
+
+.invite-container.visible {
+    animation: slideIn 1s forwards; /* Aplica animația */
+}
+
+.invite-photo img {
+    margin-left: 30px;
+    height: 300px;
+    border-radius: 5px;
+}
+.invite-text {
+    width: 400px;
+    box-shadow: 0 0 10px 5px rgba(146, 146, 146, 0.184);
+    border-radius: 5px;
+}
+
+.invite-text h3 {
+    color: #007aff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.invite-text p {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /*footer*/
 
 footer {
-    height: 200px;
-    background-color:#007aff;
+    height: 250px;
+    margin-top: 100px;
+    background-color: #007aff;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -137,11 +301,13 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 300px;
-    margin-left: 150px;
-    margin-right: 150px;
-    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 30px;
+    align-items: top;
     justify-content: center;
-    
+
+
 }
 
 .col1 {
@@ -182,21 +348,68 @@ footer {
 
 .col2-links a {
     text-decoration: none;
-    color: rgb(157, 157, 157);
+    color: rgb(189, 189, 189);
 
 }
 
 .links1 {
     display: flex;
     flex-direction: column;
+    font-size: 13px;
+    gap: 10px;
 }
 
 .links2 {
     display: flex;
     flex-direction: column;
+    font-size: 13px;
+    gap: 10px;
+}
+
+.col3 h2 {
+    color: white;
+}
+
+.contact-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-footer label input {
+    border-radius: 25px;
+    border: rgba(0, 0, 0, 0);
+    width: 225px;
+    height: 20px;
+
+}
+
+.contact-footer label input,
+textarea::placeholder {
+    padding-left: 10px;
+}
+
+.contact-footer label input,
+textarea:focus {
+    outline: none;
 }
 
 
 
+.contact-footer label textarea {
+    border-radius: 25px;
+    resize: none;
+    width: 235px;
+    height: 40px;
+}
 
-
+.contact-footer button {
+    background-color: #007aff;
+    font-weight: bold;
+    color: white;
+    height: 30px;
+    width: 70px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6);
+}
