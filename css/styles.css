@@ -120,13 +120,14 @@ header {
   
   /* Sidenav styles */
   .sidenav {
+    display: block;
     height: 100%; /* Full height */
     width: 0; /* Start with no width */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
     right: 0;
-    background-color: #111; /* Black background */
+    background-color: #dcdcdc; /* Black background */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* Smooth open/close effect */
     padding-top: 60px; /* Space from top */
@@ -136,7 +137,9 @@ header {
     padding: 10px 20px;
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    color: #007aff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     display: block;
     transition: 0.3s;
   }
