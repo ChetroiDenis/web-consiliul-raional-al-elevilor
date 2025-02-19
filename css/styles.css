@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     background: linear-gradient(#ffffff, #e7e7e7, #ecf5ff);
     overflow-x: hidden;
+    height: 100%;
 }
 
 
@@ -46,6 +47,12 @@ header {
     height: 45px;
     animation: rotateFast 1s ease-in-out, 0.5s forwards;
 }
+
+.content {
+    min-height: calc(100vh - 50px); /* Ajustează 50px cu înălțimea footer-ului */
+    display: flex;
+    flex-direction: column;
+  }
 
 
 
@@ -130,7 +137,7 @@ header {
     background-color: #dcdcdc; /* Black background */
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* Smooth open/close effect */
-    padding-top: 60px; /* Space from top */
+    padding-top: 120px; /* Space from top */
   }
   
   .sidenav a {
@@ -801,6 +808,7 @@ header {
 /*footer*/
 
 footer {
+
     height: 250px;
     margin-top: 100px;
     background-color: #007aff;
@@ -959,3 +967,65 @@ textarea:focus {
         padding-bottom: 50px;
     }
 }
+
+
+
+/*pentru coloana de persoane (pagina cre)*/
+
+.container-cre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.container-column {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-top: 50px;
+
+}
+
+.person-container {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    width: 750px;
+    height: 300px;
+    box-shadow: 0 0 20px 5px rgba(0, 89, 255, 0.305);
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+
+.person-container:hover {
+    transform: scale(1.2);
+    transition: 0.5s
+}
+
+.empty-container {
+    width: 450px;
+    height: 300px;
+}
+
+.person img {
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.p-text {
+    width: 200px;
+}
+
+.p-text h3 {
+    color: #007aff;
+}
+
+.p-text h5 {
+    color: #575757;
+}
+
