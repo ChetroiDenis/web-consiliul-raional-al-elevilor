@@ -1,9 +1,8 @@
-
-  body {
+html, body {
     margin: 0;
-    background: linear-gradient( #ffffff, #e7e7e7, #ecf5ff);
+    background: linear-gradient(#ffffff, #e7e7e7, #ecf5ff);
     overflow-x: hidden;
-  }
+}
 
 
 
@@ -43,13 +42,17 @@ header {
 .logo img {
     width: 45px;
     height: 45px;
-    animation: rotateFast 1s ease-in-out,  0.5s forwards;
+    animation: rotateFast 1s ease-in-out, 0.5s forwards;
 }
+
+
+
 
 @keyframes rotateFast {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -68,13 +71,13 @@ header {
     text-decoration: none;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    position: relative; 
+    position: relative;
 }
 
 .links a::after {
     content: '';
     position: absolute;
-    bottom: -2px; 
+    bottom: -2px;
     left: 50%;
     width: 0;
     height: 3px;
@@ -84,16 +87,145 @@ header {
 }
 
 .links a:hover::after {
-    width: 100%; 
-    left: 0; 
+    width: 100%;
+    left: 0;
 }
 
+
+/*navbar telefon*/
+@media (max-width:728px) {
+.navbar {
+    display: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+
+  
+  /* Sidenav styles */
+  .sidenav {
+    height: 100%; /* Full height */
+    width: 0; /* Start with no width */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #111; /* Black background */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* Smooth open/close effect */
+    padding-top: 60px; /* Space from top */
+  }
+  
+  .sidenav a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    background-color: #575757;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    cursor: pointer;
+  }
+
+  #logo-container {
+    position: relative;
+    display: inline-block;
+    width: 100px; /* Dimensiunea logo-ului */
+    height: 100px; /* Dimensiunea logo-ului */
+    margin: 0 auto; /* Asigură centrul orizontal */
+}
+
+.logo-mobile {
+    position: relative;
+    padding-left:10px;
+    padding-top: 10px;
+    z-index: 1; /* Logo-ul să fie în față */
+    width: 80px; /* Dimensiunea logo-ului */
+    height: 80px; /* Dimensiunea logo-ului */
+    margin: 0 auto;
+}
+
+.logo-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px; /* Dimensiune mai mare decât logo-ul pentru a-l învălui */
+    height: 100px; /* Dimensiune mai mare decât logo-ul pentru a-l învălui */
+    border: 2px solid transparent;
+    border-top: 7px solid rgb(255, 208, 0);
+    border-right: 9px solid rgb(14, 167, 0);
+    border-radius: 50%;
+    transform-origin: center;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+.logo-animation:nth-child(1) {
+    animation: rotateLines1 1s linear; /* Liniile se rotesc rapid */
+}
+
+.logo-animation:nth-child(2) {
+    animation: rotateLines2 1.2s linear; /* Liniile se rotesc puțin mai încet */
+}
+
+@keyframes rotateLines1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes rotateLines2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+        opacity: 0;
+    }
+}
+
+
+@keyframes rotateLines2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+        opacity: 0;
+    }
+}
+
+
+}
 
 
 /*titlu pagina principala*/
 .title {
     display: flex;
     justify-content: center;
+    text-align: center;
 
 }
 
@@ -111,6 +243,7 @@ header {
     display: flex;
     justify-content: center;
 }
+
 .container-content {
     display: flex;
     flex-direction: row;
@@ -118,6 +251,19 @@ header {
     gap: 250px;
     padding-top: 25px;
     padding-bottom: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+@media (max-width:1430px) {
+.container-content {
+    gap: 100px;
+}
+}
+@media (max-width:1100px) {
+    .container-content {
+        gap: 30px;
+    }
 }
 
 .text-c {
@@ -126,67 +272,244 @@ header {
     gap: 85px;
 }
 
+/* Efect hover pentru container */
 .container {
     border-radius: 10px;
     box-shadow: 0 0 20px 5px rgba(204, 204, 204, 0.6);
     width: 500px;
     height: auto;
     background-color: white;
-    opacity: 0; /* Incepe cu opacity 0 */
-    animation: slideIn 0.7s forwards; /* Animația pentru text */
+    opacity: 0;
+    animation: slideIn2 0.7s forwards;
+    transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+    position: relative;
+    /* Necesită pentru pseudo-element */
+    overflow: hidden;
 }
 
-.container:nth-child(1) {
-    animation-delay: 0.2s;
+.container:hover {
+    box-shadow: 0 0 20px 5px rgba(0, 122, 255, 0.8);
+    /* Schimbă culoarea shadow-ului */
 }
 
-.container:nth-child(2) {
-    animation-delay: 0.4s;
+.container:hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 3px solid rgba(0, 122, 255, 0.8);
+    /* Creează conturul albastru */
+    opacity: 0;
+
 }
 
-.container:nth-child(3) {
-    animation-delay: 0.6s;
-}
 
+
+/* Efect pentru h2 */
 .container h2 {
     color: #007aff;
     margin-left: 20px;
+    position: relative;
+    display: inline-block;
 }
 
+.container h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    /* Sub text */
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #007aff;
+    transition: 0.3s ease-in-out;
+}
+
+.container:hover h2::after {
+    width: 100%;
+    /* Sublinează textul */
+}
+
+/* Alte stiluri deja existente */
 .container p {
     margin-left: 20px;
 }
 
-.photo-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+/*stil container pentru tablete/telefon*/
+
+
+
+@media (max-width: 980px) {
+
+    .container-content {
+        display: none;
+    }
+
+    .container-content-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-mobile {
+        box-shadow: 0 0 20px 5px rgba(204, 204, 204, 0.6);
+        width: 520px;
+        justify-content: center;
+        text-align: center;
+        border-radius: 15px;
+    }
+
+    .container-mobile h2 {
+        padding-top: 30px;
+        color: #007aff;
+    }
+
+    .container-mobile p {
+        padding-bottom: 10px;
+    }
+
+    .container-mobile img {
+        margin-bottom: 10px;
+        border-radius: 5px;
+        max-width: 500px;
+    }
+
+
 }
 
+
+@media (max-width: 828px) {
+
+
+
+    .container-content-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-mobile {
+        box-shadow: 0 0 20px 5px rgba(204, 204, 204, 0.6);
+        width: 320px;
+        justify-content: center;
+        text-align: center;
+        border-radius: 15px;
+    }
+
+    .container-mobile h2 {
+        padding-top: 30px;
+        color: #007aff;
+    }
+
+    .container-mobile p {
+        padding-bottom: 10px;
+    }
+
+    .container-mobile img {
+        margin-bottom: 10px;
+        border-radius: 5px;
+        max-width: 290px;
+    }
+
+
+}
+
+
+
+/* Stiluri pentru imagini */
+.photo-container {
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+}
+
+/* Stiluri pentru imagini */
 .photo-container img {
     width: 500px;
     height: 300px;
     object-fit: cover;
     border-radius: 10px;
-    opacity: 0; /* Incepe cu opacity 0 */
-    transform: translateX(100%); /* Pornim din dreapta */
-    animation: slideInImages 0.7s forwards;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.photo-container img:nth-child(1) {
-    animation-delay: 0.2s;
+.photo-container img:hover {
+    transform: scale(1.05);
 }
 
-.photo-container img:nth-child(2) {
-    animation-delay: 0.4s;
+/* Stiluri pentru overlay */
+.image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
 }
+
+.image-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Imaginea centrată */
+.image-overlay img {
+    width: 800px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transform: scale(0.8);
+    /* Pornire mică */
+    animation: none;
+    /* Inițial fără animație */
+}
+
+/* Animație bounce */
+@keyframes bounce {
+    0% {
+        transform: scale(0.8) translateY(-15%);
+    }
+
+    50% {
+        transform: scale(1.1) translateY(-15%);
+    }
+
+    100% {
+        transform: scale(0.1s) translateY(-15%);
+    }
+}
+
+
+
+/* Animație pentru imaginea centrată */
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 /* Animația pentru text */
-@keyframes slideIn {
+@keyframes slideIn2 {
     0% {
         opacity: 0;
         transform: translateX(-50px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -199,17 +522,91 @@ header {
         opacity: 0;
         transform: translateX(100%);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
 
+/*countdown*/
+.container-num {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 75px;
+    opacity: 0;
+    /* Inițial invizibil */
+    transform: translate/X(-100%);
+    /* Inițial deplasat complet la stânga */
+    animation: slideIN3 1s forwards;
+    /* Animația care va face elementul să vină din stânga */
+}
+
+@keyframes slideIN3 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+        /* Pleacă din stânga complet */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* Ajunge la poziția sa finală (din stânga spre dreapta) */
+    }
+}
+
+.numar-cont {
+    width: 1100px;
+    height: 100px;
+    background-color: #007aff;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.587);
+    transition: 1s;
+}
+
+.numar-cont:hover {
+    width: 1200px;
+    background-color: #007aff;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 25px 25px rgba(0, 0, 0, 0.587);
+    transition: 1s;
+}
+
+.count {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.count h3 {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 20px;
+    color: beige;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.count h2 {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 30px;
+    color: beige;
+}
+
+
+
 
 /*video pagina principala*/
 .video-loop {
     padding-top: 0px;
-    overflow: hidden; /* Ascunde partea video care iese din afacere la început */
+    overflow: hidden;
+    /* Ascunde partea video care iese din afacere la început */
 }
 
 .video-loop video {
@@ -217,30 +614,47 @@ header {
     height: 200px;
     object-fit: cover;
     padding-bottom: 0px;
-    opacity: 0; /* Începe cu opacitate 0 */
-    transform: translateX(-100%); /* Începe din stânga */
-    animation: slideIn 1s ease-out forwards; /* Aplica animația */
+    opacity: 0;
+    /* Începe cu opacitate 0 */
+    transform: translateX(-100%);
+    /* Începe din stânga */
+    animation: slideIn 1s ease-out forwards;
+    /* Aplica animația */
 }
+
+@media (max-width: 728px) {
+    .video-loop {
+        display: none;
+    }
+}
+
+
 
 /* Animația pentru video */
 @keyframes slideIn {
     0% {
         opacity: 0;
-        transform: translateX(-100%); /* Începe din stânga */
+        transform: translateX(-100%);
+        /* Începe din stânga */
     }
+
     100% {
         opacity: 1;
-        transform: translateX(0); /* Video-ul ajunge la poziția finală */
+        transform: translateX(0);
+        /* Video-ul ajunge la poziția finală */
     }
 }
 
 @keyframes slideIn {
     0% {
-        transform: translateX(100%); /* Start off-screen, la dreapta */
+        transform: translateX(100%);
+        /* Start off-screen, la dreapta */
         opacity: 0;
     }
+
     100% {
-        transform: translateX(0); /* Mergi la poziția normală */
+        transform: translateX(0);
+        /* Mergi la poziția normală */
         opacity: 1;
     }
 }
@@ -256,32 +670,69 @@ header {
     height: 350px;
     align-items: center;
     background-color: white;
-    opacity: 0; /* Ascunde elementul la început */
-    transform: translateX(100%); /* Poziționează-l în afacerea ecranului */
-    transition: opacity 1s, transform 1s; /* Animație lină */
+    opacity: 0;
+    /* Ascunde elementul la început */
+    transform: translateX(100%);
+    /* Poziționează-l în afacerea ecranului */
+    transition: opacity 1s, transform 1s;
+    /* Animație lină */
 }
 
 .invite-container.visible {
-    animation: slideIn 1s forwards; /* Aplica animația */
+    animation: slideIn 1s forwards;
+    /* Aplica animația */
 }
 
 .invite-photo img {
     margin-left: 30px;
     height: 300px;
     border-radius: 5px;
+    transition: 0.5s;
 }
+
+.invite-photo img:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
 .invite-text {
     width: 400px;
     box-shadow: 0 0 10px 5px rgba(146, 146, 146, 0.184);
     border-radius: 5px;
+    transition: 0.5s;
 }
 
+.invite-text:hover {
+    box-shadow: 0 0 20px 5px rgba(0, 122, 255, 0.8);
+    transition: 0.5s;
+}
+
+/* Subliniere animată pentru h3 */
 .invite-text h3 {
     color: #007aff;
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 10px;
     margin-right: 10px;
+    position: relative;
+    overflow: hidden;
 }
+
+.invite-text h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007aff;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Sublinierea apare când se adaugă clasa underline-visible */
+.invite-text h3.underline-visible::after {
+    width: 100%;
+}
+
 
 .invite-text p {
     margin-left: 10px;
@@ -295,7 +746,21 @@ footer {
     margin-top: 100px;
     background-color: #007aff;
     font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
+    /* Inițial ascuns */
+    transform: translateY(100px);
+    /* Inițial aflat jos */
+    transition: opacity 0.5s, transform 0.5s;
+    /* Animație de tranziție */
 }
+
+footer.visible {
+    opacity: 1;
+    /* Devine vizibil când clasa .visible este adăugată */
+    transform: translateY(0);
+    /* Se ridică la poziția normală */
+}
+
 
 .footer-cols {
     display: flex;

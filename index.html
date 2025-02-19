@@ -27,14 +27,30 @@
             </div>
 
         </div>
+
+        <div id="logo-container" onclick="animateLogo(); openNav()">
+            <div class="logo-animation"></div>
+            <div class="logo-animation"></div>
+            <img class="logo-mobile" src="images/logo-round.png" alt="">
+        </div>
+        
+        
     </header>
+
+    <div id="sidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
 
     <div class="video-loop">
         <video id="background-video" autoplay muted loop src="resources/loopvideo.mp4"></video>
     </div>
-    
 
-   
+
+
 
     <div class="title">
         <h1>Consiliul raional al elevilor Cahul</h1>
@@ -72,16 +88,99 @@
 
         </div>
 
-        <div class="photo-container">
 
-            <img src="images/image3.jpg" alt="">
-            <img src="images/image2.jpg" alt="">
+
+        <div class="photo-container">
+            <img src="images/image3.jpg" alt="Imagine 1">
+            <img src="images/image2.jpg" alt="Imagine 2">
+        </div>
+
+        <!-- Overlay pentru imagine -->
+        <div class="image-overlay" id="imageOverlay">
+            <img src="" alt="Imagine mare">
+        </div>
+
+
+
+    </div>
+
+    <!--conent-container pentru telefon -->
+    <div class="container-content-mobile">
+
+
+        <div class="text-c-mobile">
+            <div class="container-mobile">
+
+                <h2>Scopul:</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit officiis in praesentium hic veritatis,
+                    quod quas pariatur reiciendis ipsam velit? Debitis laborum quas perferendixss at earum voluptate
+                    quos
+                    nobis nihil.</p>
+
+                <img src="images/image3.jpg" alt="Imagine 1">
+            </div>
+            <div class="container-mobile">
+
+                <h2>Viziunea:</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit officiis in praesentium hic veritatis,
+                    quod quas pariatur reiciendis ipsam velit? Debitis laborum quas perferendis at earum voluptate quos
+                    nobis nihil.</p>
+
+                <img src="images/image2.jpg" alt="Imagine 2">
+            </div>
+            <div class="container-mobile">
+
+                <h2>O huinea:</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit officiis in praesentium hic veritatis,
+                    quod quas pariatur reiciendis ipsam velit? Debitis laborum quas perferendis at earum voluptate quos
+                    nobis nihil.</p>
+            </div>
 
 
         </div>
 
 
     </div>
+
+
+
+    <!-- Overlay pentru imagine -->
+    <div class="image-overlay" id="imageOverlay">
+        <img src="" alt="Imagine mare">
+    </div>
+
+
+
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+
+    <div class="container-num">
+        <div class="numar-cont">
+            <div class="count">
+                <h3>Numarul consiliilor <br> elevilor din Cahul: <br>
+                    <div id="counter" class="counter" data-target="500">0</div>
+                </h3>
+            </div>
+            <div class="count">
+                <h3>Elevi reprezentanți: <br>
+                    <div id="counter2" class="counter" data-target="300">0</div>
+                </h3>
+            </div>
+            <div class="count">
+                <h3>Numarul elevilor in scoala:<br>
+                    <div id="counter3" class="counter" data-target="1000">0</div>
+                </h3>
+            </div>
+        </div>
+    </div>
+
 
     <div class="centered">
         <div class="invite-container">
@@ -102,7 +201,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
 
@@ -160,3 +259,5 @@
 
 </html>
 <script src="js/script.js"></script>
+<script src="js/count.js"></script>
+<script src="js/navbar-mobile.js"></script>
