@@ -12,6 +12,8 @@ header {
 
 }
 
+
+
 .navbar {
     width: 650px;
     display: flex;
@@ -91,13 +93,16 @@ header {
     left: 0;
 }
 
-.logo-mobile {
-    display: none;
-}
+
 
 .sidenav {
     display: none;
 }
+
+.logo-mobile {
+    display: none;
+}
+
 /*navbar telefon*/
 @media (max-width:728px) {
 .navbar {
@@ -157,6 +162,7 @@ header {
 }
 
 .logo-mobile {
+    display: block;
     position: relative;
     padding-left:10px;
     padding-top: 10px;
@@ -225,6 +231,7 @@ header {
 
 
 }
+
 
 
 /*titlu pagina principala*/
@@ -611,6 +618,20 @@ header {
 
 
 
+@media (max-width: 900px) {
+    .numar-cont {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 350px;
+        margin-top: 30px;
+    }
+
+    .numar-cont:hover {
+        
+    }
+}
+
 
 /*video pagina principala*/
 .video-loop {
@@ -748,6 +769,31 @@ header {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+
+@media (max-width: 1000px) {
+    .invite-container {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        gap: 30px;
+        justify-content: center;
+        height: 600px;
+        align-items: center;
+    }
+
+    .invite-photo img {
+        width: 300px;
+        object-fit: cover;
+        height: 200px;
+        margin-left: 0px;
+    }
+
+    .invite-text {
+        width: 300px;
+    }
+}
+
 
 /*footer*/
 
@@ -887,4 +933,26 @@ textarea:focus {
     border-radius: 25px;
     border: none;
     box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 900px) {
+    .footer-cols {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content:  center;
+    }
+
+    footer {
+        display: flex;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+
+    .col3 {
+        padding-bottom: 50px;
+    }
 }
