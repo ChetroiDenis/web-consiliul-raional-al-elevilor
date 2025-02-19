@@ -91,7 +91,13 @@ header {
     left: 0;
 }
 
+.logo-mobile {
+    display: none;
+}
 
+.sidenav {
+    display: none;
+}
 /*navbar telefon*/
 @media (max-width:728px) {
 .navbar {
@@ -332,6 +338,10 @@ header {
 /* Alte stiluri deja existente */
 .container p {
     margin-left: 20px;
+}
+
+.container-content-mobile {
+    display: none;
 }
 
 /*stil container pentru tablete/telefon*/
@@ -611,7 +621,7 @@ header {
 
 .video-loop video {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     padding-bottom: 0px;
     opacity: 0;
