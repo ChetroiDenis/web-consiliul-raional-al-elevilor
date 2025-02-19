@@ -90,3 +90,6 @@ document.addEventListener('DOMContentLoaded', checkVisibility);
         }, { threshold: 0.5 }); // 50% din footer trebuie să fie vizibil
 
         observer.observe(footer); // Începe să observe footer-ul
+
+
+
