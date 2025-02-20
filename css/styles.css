@@ -6,6 +6,29 @@ body {
     height: 100%;
 }
 
+/* Stil bara de scroll */
+::-webkit-scrollbar {
+    width: 6px; 
+    height: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #007aff;
+    border-radius: 20px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 20px; 
+  }
+  
+  
+  ::-moz-scrollbar-thumb {
+    background: #007aff; 
+    border-radius: 20px;
+  }
+  
+
 
 
 header {
@@ -31,7 +54,6 @@ header {
     transition: margin-top 1.3s ease;
     position: fixed;
     z-index: 9999;
-    /* Smooth animation */
 }
 
 .nav {
@@ -51,7 +73,6 @@ header {
 
 .content {
     min-height: calc(100vh - 50px);
-    /* Ajustează 50px cu înălțimea footer-ului */
     display: flex;
     flex-direction: column;
 }
@@ -127,27 +148,18 @@ header {
 
 
 
-    /* Sidenav styles */
     .sidenav {
         display: block;
         height: 100%;
-        /* Full height */
         width: 0;
-        /* Start with no width */
         position: fixed;
-        /* Stay in place */
         z-index: 1;
-        /* Stay on top */
         top: 0;
         right: 0;
         background-color: #dcdcdc;
-        /* Black background */
         overflow-x: hidden;
-        /* Disable horizontal scroll */
         transition: 0.5s;
-        /* Smooth open/close effect */
         padding-top: 120px;
-        /* Space from top */
     }
 
     .sidenav a {
@@ -177,11 +189,8 @@ header {
         position: relative;
         display: inline-block;
         width: 100px;
-        /* Dimensiunea logo-ului */
         height: 100px;
-        /* Dimensiunea logo-ului */
         margin: 0 auto;
-        /* Asigură centrul orizontal */
     }
 
     .logo-mobile {
@@ -190,11 +199,8 @@ header {
         padding-left: 10px;
         padding-top: 10px;
         z-index: 1;
-        /* Logo-ul să fie în față */
         width: 80px;
-        /* Dimensiunea logo-ului */
         height: 80px;
-        /* Dimensiunea logo-ului */
         margin: 0 auto;
     }
 
@@ -203,9 +209,7 @@ header {
         top: 50%;
         left: 50%;
         width: 100px;
-        /* Dimensiune mai mare decât logo-ul pentru a-l învălui */
         height: 100px;
-        /* Dimensiune mai mare decât logo-ul pentru a-l învălui */
         border: 2px solid transparent;
         border-top: 7px solid rgb(255, 208, 0);
         border-right: 9px solid rgb(14, 167, 0);
@@ -217,12 +221,10 @@ header {
 
     .logo-animation:nth-child(1) {
         animation: rotateLines1 1s linear;
-        /* Liniile se rotesc rapid */
     }
 
     .logo-animation:nth-child(2) {
         animation: rotateLines2 1.2s linear;
-        /* Liniile se rotesc puțin mai încet */
     }
 
     @keyframes rotateLines1 {
@@ -272,18 +274,52 @@ header {
     display: flex;
     justify-content: center;
     text-align: center;
-
 }
 
 .title h1 {
     color: #007aff;
-
     padding-top: 10px;
     font-size: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    position: relative;
+}
+
+.title h1::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007aff;
+    transition: width 1s ease;
+}
+
+.title h1.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title h1.animate::after {
+    width: 100%;
+}
+
+@media (max-width:850px) {
+    .title h1::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 0px;
+        background-color: #007aff;
+        transition: width 1s ease;
+    }
 }
 
 
-/*container continut pentru pagina principala*/
 
 .centered {
     display: flex;
@@ -319,7 +355,6 @@ header {
     gap: 85px;
 }
 
-/* Efect hover pentru container */
 .container {
     border-radius: 10px;
     box-shadow: 0 0 20px 5px rgba(204, 204, 204, 0.6);
@@ -330,13 +365,11 @@ header {
     animation: slideIn2 0.7s forwards;
     transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
     position: relative;
-    /* Necesită pentru pseudo-element */
     overflow: hidden;
 }
 
 .container:hover {
     box-shadow: 0 0 20px 5px rgba(0, 122, 255, 0.8);
-    /* Schimbă culoarea shadow-ului */
 }
 
 .container:hover::before {
@@ -344,14 +377,12 @@ header {
     position: absolute;
     inset: 0;
     border: 3px solid rgba(0, 122, 255, 0.8);
-    /* Creează conturul albastru */
     opacity: 0;
 
 }
 
 
 
-/* Efect pentru h2 */
 .container h2 {
     color: #007aff;
     margin-left: 20px;
@@ -363,7 +394,6 @@ header {
     content: "";
     position: absolute;
     bottom: -5px;
-    /* Sub text */
     left: 0;
     width: 0%;
     height: 2px;
@@ -373,10 +403,9 @@ header {
 
 .container:hover h2::after {
     width: 100%;
-    /* Sublinează textul */
 }
 
-/* Alte stiluri deja existente */
+
 .container p {
     margin-left: 20px;
 }
@@ -385,7 +414,6 @@ header {
     display: none;
 }
 
-/*stil container pentru tablete/telefon*/
 
 
 
@@ -467,15 +495,12 @@ header {
 }
 
 
-
-/* Stiluri pentru imagini */
 .photo-container {
     display: flex;
     gap: 50px;
     flex-direction: column;
 }
 
-/* Stiluri pentru imagini */
 .photo-container img {
     width: 500px;
     height: 300px;
@@ -489,7 +514,6 @@ header {
     transform: scale(1.05);
 }
 
-/* Stiluri pentru overlay */
 .image-overlay {
     position: fixed;
     top: 0;
@@ -520,12 +544,10 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     transform: scale(0.8);
-    /* Pornire mică */
     animation: none;
-    /* Inițial fără animație */
 }
 
-/* Animație bounce */
+
 @keyframes bounce {
     0% {
         transform: scale(0.8) translateY(-15%);
@@ -580,30 +602,25 @@ header {
     }
 }
 
-/*countdown*/
+
 .container-num {
     display: flex;
     justify-content: center;
     padding-bottom: 75px;
     opacity: 0;
-    /* Inițial invizibil */
     transform: translate/X(-100%);
-    /* Inițial deplasat complet la stânga */
     animation: slideIN3 1s forwards;
-    /* Animația care va face elementul să vină din stânga */
 }
 
 @keyframes slideIN3 {
     0% {
         opacity: 0;
         transform: translateX(-100%);
-        /* Pleacă din stânga complet */
     }
 
     100% {
         opacity: 1;
         transform: translateX(0);
-        /* Ajunge la poziția sa finală (din stânga spre dreapta) */
     }
 }
 
@@ -665,11 +682,9 @@ header {
 }
 
 
-/*video pagina principala*/
 .video-loop {
     padding-top: 0px;
     overflow: hidden;
-    /* Ascunde partea video care iese din afacere la început */
 }
 
 .video-loop video {
@@ -678,11 +693,9 @@ header {
     object-fit: cover;
     padding-bottom: 0px;
     opacity: 0;
-    /* Începe cu opacitate 0 */
     transform: translateX(-100%);
-    /* Începe din stânga */
     animation: slideIn 1s ease-out forwards;
-    /* Aplica animația */
+   
 }
 
 @media (max-width: 728px) {
@@ -698,26 +711,23 @@ header {
     0% {
         opacity: 0;
         transform: translateX(-100%);
-        /* Începe din stânga */
+
     }
 
     100% {
         opacity: 1;
         transform: translateX(0);
-        /* Video-ul ajunge la poziția finală */
     }
 }
 
 @keyframes slideIn {
     0% {
         transform: translateX(100%);
-        /* Start off-screen, la dreapta */
         opacity: 0;
     }
 
     100% {
         transform: translateX(0);
-        /* Mergi la poziția normală */
         opacity: 1;
     }
 }
@@ -733,18 +743,9 @@ header {
     height: 350px;
     align-items: center;
     background-color: white;
-    opacity: 0;
-    /* Ascunde elementul la început */
-    transform: translateX(100%);
-    /* Poziționează-l în afacerea ecranului */
-    transition: opacity 1s, transform 1s;
-    /* Animație lină */
+
 }
 
-.invite-container.visible {
-    animation: slideIn 1s forwards;
-    /* Aplica animația */
-}
 
 .invite-photo img {
     margin-left: 30px;
@@ -770,7 +771,6 @@ header {
     transition: 0.5s;
 }
 
-/* Subliniere animată pentru h3 */
 .invite-text h3 {
     color: #007aff;
     font-family: Arial, Helvetica, sans-serif;
@@ -791,7 +791,6 @@ header {
     transition: width 0.5s ease-in-out;
 }
 
-/* Sublinierea apare când se adaugă clasa underline-visible */
 .invite-text h3.underline-visible::after {
     width: 100%;
 }
@@ -836,19 +835,14 @@ footer {
     background-color: #007aff;
     font-family: Arial, Helvetica, sans-serif;
     opacity: 0;
-    /* Inițial ascuns */
     transform: translateY(100px);
-    /* Inițial aflat jos */
     transition: opacity 0.5s, transform 0.5s;
-    /* Animație de tranziție */
 }
 
 footer.visible {
     opacity: 1;
-    /* Devine vizibil când clasa .visible este adăugată */
     transform: translateY(0);
-    /* Se ridică la poziția normală */
-}
+   
 
 
 .footer-cols {
@@ -997,7 +991,7 @@ textarea:focus {
     }
 }
 
-
+}
 
 /*pentru coloana de persoane (pagina cre)*/
 
@@ -1047,7 +1041,7 @@ textarea:focus {
 }
 
 .p-text {
-    width: 200px;
+    width: 250px;
 }
 
 .p-text h3 {
@@ -1057,6 +1051,89 @@ textarea:focus {
 .p-text h5 {
     color: #575757;
 }
+
+.p-text p strong {
+    color: #007aff;
+}
+
+.p-text a {
+    text-decoration: none;
+    color: #7d7d7d;
+}
+
+
+@media (max-width:1400px) {
+    .empty-container {
+        display: none;
+    }
+
+    @media (max-width:768px) {
+        .person-container {
+            width: 650px;
+        }
+
+    }
+
+    @media (max-width:670px) {
+        .person-container {
+            flex-direction: column;
+            height: 600px;
+            width: 350px;
+        }
+    }
+}
+
+/*imagini cu membri*/
+
+
+
+
+.people-container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 50px;
+
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.people-photo img {
+    width: 250px;
+    border-radius: 10px;
+    opacity: 0;
+    
+    transform: translateY(20px);
+   
+    transition: transform 0.5s, box-shadow 0.5s;
+    
+}
+
+.people-photo img.animate {
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+.people-photo img:hover {
+    box-shadow: 0 0 20px 5px rgba(0, 89, 255, 0.469);
+}
+
+
+
 
 
 /*Pagina acte norm..*/
@@ -1095,15 +1172,12 @@ textarea:focus {
     flex-direction: row;
     justify-content: center;
     gap: 50px;
-    /* Micșorează distanța dintre elemente pentru un aspect mai compact */
     position: relative;
-    /* Asigură poziționarea corectă pentru linia verticală */
 }
 
 .docs-container {
     position: relative;
     padding-right: 125px;
-    /* Spațiu pentru linia verticală */
     animation: slideInFromLeft 1s ease-out forwards;
 }
 
@@ -1112,13 +1186,10 @@ textarea:focus {
     position: absolute;
     top: 0;
     right: 0;
-    /* Poziționează linia la marginea din dreapta */
     width: 2px;
-    /* Grosimea liniei */
     height: 100%;
-    /* Înălțimea liniei */
     background-color: #007aff;
-    /* Culoarea liniei */
+    
 }
 
 .docs-container a {
@@ -1231,22 +1302,22 @@ textarea:focus {
 }
 
 @media (max-width:512px) {
-.doc {
-    width: 300px;
-    height: 70px;
-}
+    .doc {
+        width: 300px;
+        height: 70px;
+    }
 
-.docs-text {
-    width: 350px;
-}
+    .docs-text {
+        width: 350px;
+    }
 
-.docs-text img {
-    width: 320px;
-}
+    .docs-text img {
+        width: 320px;
+    }
 
-.docs-text h2 {
-    max-width: 300px;
-}
+    .docs-text h2 {
+        max-width: 300px;
+    }
 }
 
 
@@ -1575,6 +1646,7 @@ textarea:focus {
         gap: 70px;
     }
 }
+
 @media (max-width:545px) {
     .contact-container {
         flex-direction: column;
@@ -1594,12 +1666,168 @@ textarea:focus {
     .contact-form form label input {
         width: 330px;
     }
+
     .contact-form form label textarea {
         width: 330px;
     }
 
-    .title h1{
+    .title h1 {
         margin-top: -70px;
         padding-top: -70px;
     }
 }
+
+/*Subdiviziunile*/
+
+
+.first-subdiv-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.first-photo img {
+    width: 700px;
+}
+
+.first-cont {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.first-text {
+    box-shadow: 0 0 10px 5px rgba(208, 208, 208, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    height: 350px;
+
+}
+
+
+
+.first-text:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.first-text h3 {
+    color: #007aff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    width: 300px;
+
+}
+
+@media (max-width:800px) {
+    .first-subdiv-cont {
+        flex-direction: column;
+    }
+
+    .first-photo img {
+        max-width: 350px;
+    }
+
+    .first-text:hover {
+        transform: scale(1.0);
+        transition: 0.5s;
+    }
+}
+
+
+.comp {
+    box-shadow: 0 0 5px 5px rgba(122, 122, 122, 0.282);
+    width: 80%;
+}
+
+.comp h4 {
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #007aff;
+
+}
+
+.comp p {
+    padding-left: 20px;
+}
+
+.comp p strong {
+    color: #007aff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-sub {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 40px;
+}
+
+/*disclaimer*/
+
+.disclaimer, .disclaimer-mobile {
+  position: fixed;
+  right: 20px;
+  background-color: rgba(0, 170, 255, 0.8);
+  color: rgb(0, 0, 0);
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 9999;
+  display: none; 
+  width: 200px; 
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+
+@media (max-width: 730px) {
+ 
+  .disclaimer-mobile {
+    display: block;
+    bottom: 170px; 
+  }
+
+ 
+  .disclaimer {
+    display: block;
+    bottom: 20px; 
+  }
+}
+
+
+@media (min-width: 731px) {
+  .disclaimer {
+    display: block; 
+    bottom: 20px;
+  }
+  .disclaimer-mobile {
+    display: none; 
+    bottom: 170px;
+  }
+}
+
+  
