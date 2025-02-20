@@ -8,26 +8,26 @@ body {
 
 /* Stil bara de scroll */
 ::-webkit-scrollbar {
-    width: 6px; 
+    width: 6px;
     height: 12px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: #007aff;
-    border-radius: 20px; 
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-    border-radius: 20px; 
-  }
-  
-  
-  ::-moz-scrollbar-thumb {
-    background: #007aff; 
     border-radius: 20px;
-  }
-  
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 20px;
+}
+
+
+::-moz-scrollbar-thumb {
+    background: #007aff;
+    border-radius: 20px;
+}
+
 
 
 
@@ -536,7 +536,7 @@ header {
     opacity: 1;
 }
 
-/* Imaginea centrată */
+
 .image-overlay img {
     width: 800px;
     height: 600px;
@@ -678,7 +678,6 @@ header {
         margin-top: 30px;
     }
 
-    .numar-cont:hover {}
 }
 
 
@@ -695,7 +694,7 @@ header {
     opacity: 0;
     transform: translateX(-100%);
     animation: slideIn 1s ease-out forwards;
-   
+
 }
 
 @media (max-width: 728px) {
@@ -839,10 +838,12 @@ footer {
     transition: opacity 0.5s, transform 0.5s;
 }
 
+
+
 footer.visible {
     opacity: 1;
     transform: translateY(0);
-   
+}
 
 
 .footer-cols {
@@ -979,7 +980,7 @@ textarea:focus {
 
     footer {
         display: flex;
-        height: auto;
+        height: 600px;
         justify-content: center;
         align-items: center;
     }
@@ -991,7 +992,7 @@ textarea:focus {
     }
 }
 
-}
+
 
 /*pentru coloana de persoane (pagina cre)*/
 
@@ -1104,7 +1105,7 @@ textarea:focus {
     from {
         opacity: 0;
         transform: translateY(20px);
-        
+
     }
 
     to {
@@ -1117,11 +1118,11 @@ textarea:focus {
     width: 250px;
     border-radius: 10px;
     opacity: 0;
-    
+
     transform: translateY(20px);
-   
+
     transition: transform 0.5s, box-shadow 0.5s;
-    
+
 }
 
 .people-photo img.animate {
@@ -1138,7 +1139,6 @@ textarea:focus {
 
 /*Pagina acte norm..*/
 
-/* Animația pentru div-ul care vine din stânga */
 @keyframes slideInFromLeft {
     from {
         transform: translateX(-100%);
@@ -1151,7 +1151,6 @@ textarea:focus {
     }
 }
 
-/* Animația pentru div-ul care vine din dreapta */
 @keyframes slideInFromRight {
     from {
         transform: translateX(100%);
@@ -1189,7 +1188,7 @@ textarea:focus {
     width: 2px;
     height: 100%;
     background-color: #007aff;
-    
+
 }
 
 .docs-container a {
@@ -1348,7 +1347,7 @@ textarea:focus {
     transition: 0.5s;
 }
 
-/* Stare inițială înainte de animație */
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -1363,7 +1362,6 @@ textarea:focus {
 
 .new {
     opacity: 0;
-    /* Ascuns inițial */
     animation: fadeInUp 1s ease forwards;
 }
 
@@ -1776,58 +1774,58 @@ textarea:focus {
 
 /*disclaimer*/
 
-.disclaimer, .disclaimer-mobile {
-  position: fixed;
-  right: 20px;
-  background-color: rgba(0, 170, 255, 0.8);
-  color: rgb(0, 0, 0);
-  padding: 15px;
-  border-radius: 5px;
-  font-size: 14px;
-  z-index: 9999;
-  display: none; 
-  width: 200px; 
+.disclaimer,
+.disclaimer-mobile {
+    position: fixed;
+    right: 20px;
+    background-color: rgba(0, 170, 255, 0.8);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 9999;
+    display: none;
+    width: 200px;
 }
 
 .close-btn {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-  transition: color 0.3s ease;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .close-btn:hover {
-  color: red;
+    color: red;
 }
 
 
 @media (max-width: 730px) {
- 
-  .disclaimer-mobile {
-    display: block;
-    bottom: 170px; 
-  }
 
- 
-  .disclaimer {
-    display: block;
-    bottom: 20px; 
-  }
+    .disclaimer-mobile {
+        display: block;
+        bottom: 170px;
+    }
+
+
+    .disclaimer {
+        display: block;
+        bottom: 20px;
+    }
 }
 
 
 @media (min-width: 731px) {
-  .disclaimer {
-    display: block; 
-    bottom: 20px;
-  }
-  .disclaimer-mobile {
-    display: none; 
-    bottom: 170px;
-  }
-}
+    .disclaimer {
+        display: block;
+        bottom: 20px;
+    }
 
-  
+    .disclaimer-mobile {
+        display: none;
+        bottom: 170px;
+    }
+}
