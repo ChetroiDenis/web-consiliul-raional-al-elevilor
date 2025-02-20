@@ -1,6 +1,6 @@
-(function() {
-    const slides = document.querySelector('.slides');
-    const images = document.querySelectorAll('.slides img');
+document.querySelectorAll('.slideshow').forEach(slideshow => {
+    const slides = slideshow.querySelector('.slides');
+    const images = slides.querySelectorAll('img');
     let currentIndex = 0;
     const totalSlides = images.length;
 
@@ -9,6 +9,5 @@
         slides.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
 
-    // Auto-slide every 3 seconds
     setInterval(updateSlide, 3000);
-})();
+});
