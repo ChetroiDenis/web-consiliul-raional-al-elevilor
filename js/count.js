@@ -1,4 +1,6 @@
 
+/*Numaratoare animata*/
+
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".counter");
 

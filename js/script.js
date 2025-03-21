@@ -1,9 +1,19 @@
 /*pentru header*/
-let lastScrollPosition = 0;
-const navbar = document.querySelector(".navbar");
 window.addEventListener("load", function () {
-    navbar.style.marginTop = "-50px"; 
+    const navbar = document.querySelector(".navbar");
+    navbar.style.marginTop = "-50px";
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll('.links a');
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href').split("/").pop(); 
+        console.log("Comparing:", linkPath, "with", currentPath); 
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
 });
+
+
 
 
 // animatie pentru imagini (click)
@@ -67,4 +77,7 @@ window.addEventListener("load", function () {
         );
         titles.forEach((title) => observer.observe(title));
     });
+
+
+
 
