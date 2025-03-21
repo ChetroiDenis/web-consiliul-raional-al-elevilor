@@ -318,6 +318,7 @@ header {
     .title h1 {
         padding-top: 100px;
     }
+
     .title h1::after {
         content: "";
         position: absolute;
@@ -969,7 +970,7 @@ textarea:focus {
 
 .contact-footer button {
     background-color: #007aff;
-    cursor: pointer ;
+    cursor: pointer;
     font-weight: bold;
     color: white;
     height: 30px;
@@ -1053,7 +1054,7 @@ textarea:focus {
     justify-content: center;
     border-radius: 25px;
     opacity: 0;
-    transform: translateX(100px); /* Default: din dreapta */
+    transform: translateX(100px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -1063,7 +1064,7 @@ textarea:focus {
 }
 
 .person-container.left {
-    transform: translateX(-100px); /* Din stânga */
+    transform: translateX(-100px);
 }
 
 .person-container:hover {
@@ -1115,6 +1116,7 @@ textarea:focus {
     transition: 0.5s;
 
 }
+
 .cv-btn:hover {
     scale: 1.1;
     transition: 0.5s;
@@ -1148,11 +1150,11 @@ textarea:focus {
     }
 
     .person-container {
-        transform: translateY(100px); /* Efect de apariție de jos în sus */
+        transform: translateY(100px);
     }
 
     .person-container.left {
-        transform: translateY(100px); /* Toate vin de jos pe mobil */
+        transform: translateY(100px);
     }
 }
 
@@ -1393,7 +1395,6 @@ textarea:focus {
 
 
 
-
 /*pagina noutati*/
 
 .container-news {
@@ -1539,13 +1540,10 @@ textarea:focus {
         justify-content: center;
         gap: 100px;
         align-items: center;
-
-
-
     }
 
     .image img {
-        width:300px;
+        width: 300px;
     }
 
     .new {
@@ -1613,6 +1611,7 @@ textarea:focus {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1747,7 +1746,7 @@ textarea:focus {
         gap: 70px;
     }
 
-    
+
     .contact-data:hover {
         transform: scale(1.0);
     }
@@ -1825,7 +1824,7 @@ textarea:focus {
     scale: 1.1;
     box-shadow: 0 0 10px 5px rgba(208, 208, 208, 0.4);
     transition: 0.5s;
-    
+
 }
 
 .comp-btn a {

@@ -14,8 +14,6 @@ window.addEventListener("load", function () {
 });
 
 
-
-
 // animatie pentru imagini (click)
 
         const images = document.querySelectorAll('.photo-container img');

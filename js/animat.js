@@ -58,23 +58,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-/*animatie form cont*/
-
-document.addEventListener("DOMContentLoaded", function() {
-    const contactForm = document.querySelector('.contact-form');
-
-    if (contactForm) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    contactForm.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1  // Animația începe când 10% din formular este vizibil
-        });
-
-        observer.observe(contactForm);
-    }
-});
